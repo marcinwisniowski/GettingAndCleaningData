@@ -1,6 +1,6 @@
 # Data Science Specialization
 
-## Getting and Cleaning Data
+## Getting and Cleaning Data - Peer Assessment
 
 ### Description
 
@@ -8,9 +8,9 @@ This repository is created for a purpose of resolving a task of course project f
 
 Within repository there are three files:
 
-  * [a relative link](README.md) - Short desctription of the project and guide how to run the process,
-  * [a relative link](CodeBook.md) - Detailed description about the output of the process
-  * [a relative link](run_analysis.R) - R script, which contains step by step cleaning data process
+  * [README.md](README.md) - Short desctription of the project and guide how to run the process,
+  * [CodeBook.md](CodeBook.md) - Detailed description about the output of the process
+  * [run_analysis.R](run_analysis.R) - R script, which contains step by step cleaning data process
 
 ### Tasks
 
@@ -35,6 +35,6 @@ please make sure you have them installed before runining the script
 
 Follow simple path:
   1. Create a new directory which will be used for whole process,
-  2. Download _run_analysis.R_ and save it to previous created directory,
+  2. Download __run_analysis.R__ and save it to previous created directory,
   3. Download and unzip dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. to directory which you've created in first step.
-  4. Run _run_analysis.R_ script and wait for output file, which will be _tidy_data.csv_
+  4. Run __run_analysis.R__ script and wait for output file, which will be __tidy_data.csv__
