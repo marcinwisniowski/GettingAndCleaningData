@@ -1,0 +1,4 @@
+UCI\ HAR\ Dataset/
+*.zip
+*.html
+tidy_data.csv
