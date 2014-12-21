@@ -20,7 +20,7 @@
 ##
 
 dataset_dir <- "UCI HAR Dataset"
-output_file <- "tidy_data.csv"
+output_file <- "tidy_data.txt"
 
 # Define infut file paths
 
@@ -89,4 +89,4 @@ names(data.set) <- gsub(
 data.tidy <- aggregate(. ~ activity + subject, data=data.set, mean)
 
 # 5. Write Data to file
-write.table(data.tidy, output_file, sep=";")
+write.table(data.tidy, output_file, row.name=FALSE)
