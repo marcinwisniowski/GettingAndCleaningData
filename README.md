@@ -25,9 +25,7 @@ You should create one R script called run_analysis.R that does the following.
 
 The _run_analysis.R_ uses this libraries:
 
-  * data.table
-  * plyr
-  * http
+  * __data.table__
 
 please make sure you have them installed before runining the script
 
@@ -37,4 +35,4 @@ Follow simple path:
   1. Create a new directory which will be used for whole process,
   2. Download __run_analysis.R__ and save it to previous created directory,
   3. Download and unzip dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. to directory which you've created in first step.
-  4. Run __run_analysis.R__ script and wait for output file, which will be __tidy_data.csv__
+  4. Run __run_analysis.R__ script and wait for output file, which will be __tidy_data.txt__
