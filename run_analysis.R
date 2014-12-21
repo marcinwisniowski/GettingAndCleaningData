@@ -20,7 +20,7 @@
 ##
 
 dataset_dir <- "UCI HAR Dataset"
-optupt_file <- "tidy_data.csv"
+output_file <- "tidy_data.csv"
 
 # Define infut file paths
 
@@ -51,7 +51,42 @@ if ( !file.exists( dataset_dir ) ) {
     message("OK")
 }
 
+# 1. Read the dataset
+data.x       <- rbind( read.table(input_train_x_file), read.table(input_test_x_file) )
+data.y       <- rbind( read.table(input_train_y_file), read.table(input_test_y_file) )
+data.subject <- rbind( read.table(input_train_subject_file), read.table(input_test_subject_file) )
 
+features.labels   <- read.table(input_labels_features_file)
+activities.labels <- read.table(input_labels_activity_file)
 
+# Labeling the Data columns
+names(data.x)       <- features.labels[, 2]
+names(data.subject) <- c("subject")
+names(data.y)       <- c("activity")
 
+# 2. Process only mean and std values
+mean_std <- grepl(".*-mean.*|.*std.*", features.labels[,2])
+data.set <- cbind(data.subject, data.y, data.x[, mean_std])
 
+# 3. descriptive activity names
+data.set$activity <- activities.labels[data.set$activity, 2]
+
+# 4. Appropriately labels the data
+names(data.set) <- gsub(
+    "\\()",
+    "",
+    gsub(
+        "-std",
+        " Std",
+        gsub(
+            "-mean",
+            " Mean",
+            names( data.set )
+            )
+        )
+    )
+
+data.tidy <- aggregate(. ~ activity + subject, data=data.set, mean)
+
+# 5. Write Data to file
+write.table(data.tidy, output_file, sep=";")
