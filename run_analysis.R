@@ -89,4 +89,4 @@ names(data.set) <- gsub(
 data.tidy <- aggregate(. ~ activity + subject, data=data.set, mean)
 
 # 5. Write Data to file
-write.table(data.tidy, output_file, row.name=FALSE)
+write.table(data.tidy, output_file, row.names=FALSE, sep='\t')
